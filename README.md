@@ -1,6 +1,11 @@
+# Elevator Pitch
+My name is Lacy Randolph. I've spent the last 5 years as a cook in high volume environments being a part of teams and taking on heavy work loads. My curiosity and interest in JavaScript has brought me to the IT field. I'm currently attending Savvy Coders Full Stack Web Development bootcamp which facilitates a scrum environment running in two week sprints. I hope to dive deep into backend development and understand more about software engineering.
+# Intro Speech
+My name is Lacy Randolph. In my hometown of Cape Girardeau, Missouri 6 years before Roswell, New Mexico there was a UFO crash in a corn field. Which fueled the flame of interest I've held for aliens and supernatural my whole life. I wanted to create a safe place for people with experiences to share their stories. For anyone interested in weather versus alien activity I've added some fun space weather API's from NASA. I'd like to improve my website after Savvy Coders to include accounts if someone wants to keep track of their submissions but I want to keep an annonymous option as well.
 # Savvy Coders Project Boilerplate Starter Kit
 
 ## Overview
+
 
 This template repository contains several opinionated, 'starter' files and settings to help Savvy Coder students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
 
