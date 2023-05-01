@@ -1,0 +1,42 @@
+html {
+  background-color: green;
+  font-family: 'Courier Prime', monospace;
+  background-image: url(./assests/img/space-7710978_1280v4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+header {
+  background-color: black;
+  text-align: center;
+  color: hotpink;
+
+  /* background-image: url(./assests/img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+title, text {
+  color: greenyellow;
+}
+
+.hidden--mobile {
+  color: darkseagreen;
+}
+
+@media (min-width: 550px) {
+  nav > .fa-user {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .hidden--mobile {
+    display: none;
+  }
+}
+
+
