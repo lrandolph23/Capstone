@@ -3,7 +3,7 @@ import motherShip from "../../assests/img/mothership.jpg";
 export default () => html`
 <section id="bio">
 <h2>About Me</h2>
-<img src="${motherShip}" alt="The Mothership">
+<img src="${motherShip}" class="mothership" alt="The Mothership">
 </section>
 <form action="https://formspree.io/f/moqzypyp" method="POST">
   <label>
