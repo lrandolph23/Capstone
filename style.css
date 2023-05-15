@@ -10,62 +10,19 @@ header {
   background-color: black;
   text-align: center;
   color: hotpink;
-
-  /* background-image: url(./assests/img/background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 
 .mothership {
   max-width: 50%;
   max-height: auto;
 }
-/* title, text {
-  color: greenyellow;
-} */
 
-/* .hidden--mobile {
-  color: darkseagreen;
-} */
 @media (max-width: 550px){
   .hidden--mobile {
     display: none !important;
   }
-
-  /* nav {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  nav > i {
-    padding: 1rem;
-    font-size: 2em;
-  }
-
-  nav > ul {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 0;
-  }
-
-  nav > ul > li {
-    padding: 0.5rem;
-    list-style-type: none;
-  }
-
-  #bio img {
-    float: left;
-    width: 40%;
-    height: auto;
-    margin-right: 1rem;
-  } */
 }
+
 @media (min-width: 550px) {
   nav > .fa-user-astronaut{
     display: none;
