@@ -17,8 +17,8 @@ function render(state = store.Home) {
   router.updatePageLinks();
 }
 
+//Hiding NAV
 function afterRender(state) {
-// add menu toggle to bars icon in nav bar
 document.querySelector(".fa-user-astronaut").addEventListener("click", () => {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
@@ -30,16 +30,13 @@ router.hooks({
     switch (view) {
       case "Home":
   axios
-    // Get request to retrieve the current weather data using the API key and providing a city name
     .get(
       `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=cape%20girardeau`
     )
     .then(response => {
-      // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
       const kelvinToFahrenheit = kelvinTemp =>
         Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
-      // Create an object to be stored in the Home state from the response
       store.Home.weather = {
         city: response.data.name,
         temp: kelvinToFahrenheit(response.data.main.temp),
@@ -47,13 +44,6 @@ router.hooks({
         description: response.data.weather[0].main
       };
 
-      // An alternate method would be to store the values independently
-      /*
-      store.Home.weather.city = response.data.name;
-      store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
-      store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
-      store.Home.weather.description = response.data.weather[0].main;
-      */
       done();
   })
   .catch((err) => {
