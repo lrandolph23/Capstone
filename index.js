@@ -22,6 +22,34 @@ function afterRender(state) {
 document.querySelector(".fa-user-astronaut").addEventListener("click", () => {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
+
+
+if (state.view === "Map") {
+  document.querySelector("form").addEventListener("submit", event => {
+    // Prevent the default action AKA redirects to the same URL using POST method
+    event.preventDefault();
+
+    const expList = event.target.elements;
+    console.log("Experience List", expList);
+
+    const expData = {
+      who: expList.exp.value,
+      where: expList.where.value,
+      what: expList.what.value,
+    };
+    console.log("request Body", expData);
+
+    axios
+      .post(`${process.env.EXPERIENCE_API_URL}/exps`, expData)
+      .then(response => {
+        store.Map.exps.push(response.data);
+        router.navigate("/Map");
+      })
+      .catch(error => {
+        console.log("It puked", error);
+      });
+  });
+}
 }
 
 router.hooks({
@@ -51,23 +79,43 @@ router.hooks({
     done();
   });
   break;
-      // case "Meteorites":
-      //   // New Axios get request utilizing already made environment variable
-      //   axios
-      //     .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
-      //     .then(response => {
-      //       // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-      //       console.log("response", response);
-      //       store.Pizza.pizzas = response.data;
-      //       done();
-      //     })
-      //     .catch((error) => {
-      //       console.log("It puked", error);
-      //       done();
-      //     });
-      //     break;
-      default :
-        done();
+    case "Map":
+        // New Axios get request utilizing already made environment variable
+      axios
+        .get(`${process.env.EXPERIENCE_API_URL}/exps`)
+        .then(response => {
+            console.log("response", response);
+            store.Map.exps = response.data;
+            done();
+        })
+        .catch((error) => {
+            console.log("It puked", error);
+            done();
+        });
+        break;
+      // render, deal with form sub, instead of redirecting, redirect to same sight with data already loaded, add the onclick handler
+      // done();
+    // case "Weather":
+    //   axios
+    //   .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-21&end_date=2023-05-21&api_key=${process.env.NASA_API_KEY}`)
+    //   .then(response => {
+    //     store.Weather.meteorite = {
+    //       name: response.data.name,
+    //       is_potentially_hazardous: kelvinToFahrenheit(response.data.main.temp),
+    //       feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
+    //       description: response.data.weather[0].main
+    //       // console.log("response", response);
+    //       // store.Map.exps = response.data;
+    //     };
+    //       done();
+    //     })
+    //   .catch((error) => {
+    //       console.log("It puked", error);
+    //       done();
+    //   });
+    //   break;
+  default :
+    done();
     }
   },
   already: (params) => {
