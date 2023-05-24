@@ -1,9 +1,10 @@
 import html from "html-literal";
 export default (state) => html`
-<section id="exps">
-<form id="exps" method="POST" action="">
-  <h2>Share Your Experience</h2>
-  <div>
+<h1>Share Your Experience</h1>
+<section id="exps" class="container">
+<form id="exps" class="left" method="POST" action="">
+<h3>Experience Submission Form</h3>
+<div class=left>
     <label for="who">Type:</label>
     <input
       type="radio"
@@ -38,14 +39,15 @@ export default (state) => html`
       />
     <label for="who4">Other</label> -->
    <!-- Hidden other textbox -->
-    <input
+   <input
       type="text"
       id="radio6"
       class="list1"
       name="exp"
       placeholder="Other"
     />
-  </div>
+</div>
+<div class=left>
     <label for="where">Location:</label>
     <input
       type="text"
@@ -54,8 +56,8 @@ export default (state) => html`
       placeholder="Experience Location"
       required
     />
-  </div>
-  <div>
+</div>
+<div class=left>
     <label for="what">Experience:</label>
     <input
       type="text"
@@ -64,10 +66,13 @@ export default (state) => html`
       placeholder="What Happened"
       required
     />
-  </div>
+</div>
   <input type="submit" name="submit" value="Submit Experience" />
 </form>
+</div>
 
+<div class="right">
+  <h3>Experience Submissions</h3>
 <table id="expPost">
 <tr>
   <td id="tbl">Who</td>
@@ -80,5 +85,6 @@ export default (state) => html`
   })
   .join("")}
 </table>
+</div>
 </section>
 `;
