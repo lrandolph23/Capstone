@@ -11,7 +11,7 @@ export default (state) => html`
       id="radio2"
       class="list1"
       name="exp"
-      value="alien"
+      value="Alien"
     />
     <label for="who1">Alien</label>
     <input
@@ -19,7 +19,7 @@ export default (state) => html`
       id="radio3"
       class="list1"
       name="exp"
-      value="bigfoot"
+      value="Bigfoot"
     />
     <label for="who2">Bigfoot</label>
     <input
@@ -27,7 +27,7 @@ export default (state) => html`
       id="radio4"
       class="list1"
       name="exp"
-      value="ghost"
+      value="Ghost"
     />
     <label for="who3">Ghost</label>
     <!-- Other button
