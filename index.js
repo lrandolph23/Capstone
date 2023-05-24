@@ -23,7 +23,6 @@ document.querySelector(".fa-user-astronaut").addEventListener("click", () => {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
 
-
 if (state.view === "Map") {
   document.querySelector("form").addEventListener("submit", event => {
     // Prevent the default action AKA redirects to the same URL using POST method
@@ -80,7 +79,6 @@ router.hooks({
   });
   break;
     case "Map":
-        // New Axios get request utilizing already made environment variable
       axios
         .get(`${process.env.EXPERIENCE_API_URL}/exps`)
         .then(response => {
@@ -93,27 +91,25 @@ router.hooks({
             done();
         });
         break;
-      // render, deal with form sub, instead of redirecting, redirect to same sight with data already loaded, add the onclick handler
-      // done();
-    // case "Weather":
-    //   axios
-    //   .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-21&end_date=2023-05-21&api_key=${process.env.NASA_API_KEY}`)
-    //   .then(response => {
-    //     store.Weather.meteorite = {
-    //       name: response.data.name,
-    //       is_potentially_hazardous: kelvinToFahrenheit(response.data.main.temp),
-    //       feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
-    //       description: response.data.weather[0].main
-    //       // console.log("response", response);
-    //       // store.Map.exps = response.data;
-    //     };
-    //       done();
-    //     })
-    //   .catch((error) => {
-    //       console.log("It puked", error);
-    //       done();
-    //   });
-    //   break;
+      done();
+    case "Weather":
+      axios
+      .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-21&end_date=2023-05-21&api_key=${process.env.NASA_API_KEY}`)
+      // .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-21&end_date=2023-05-21&api_key=c63bvRwRiPQXnJ3f9rzz28PIq3AC48a3k1stngfa`)
+     .then(response => {
+        store.Weather.obj = {
+          name: response.data.near_earth_objects["2023-05-21"][0].name,
+          orbiting: response.data.near_earth_objects["2023-05-21"][0].close_approach_data[0].orbiting_body,
+          hazard:response.data.near_earth_objects["2023-05-21"][0].is_potentially_hazardous_asteroid,
+          miles: response.data.near_earth_objects["2023-05-21"][0].close_approach_data[0].miss_distance.miles
+        };
+          done();
+        })
+      .catch((error) => {
+          console.log("It puked", error);
+          done();
+      });
+      break;
   default :
     done();
     }

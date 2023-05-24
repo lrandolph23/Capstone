@@ -9,7 +9,7 @@ const expSchema = new mongoose.Schema({
   what: {
     type: String,
     required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z0-9' ]*$/
   },
   who: {
     type: String,
