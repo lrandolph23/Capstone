@@ -21,21 +21,6 @@ h1, h3 {
   text-align: center;
 }
 
-.container {
-  min-height: 100%;
-  display: flex;
-}
-
-.left {
-  left: 0px;
-  width: 50%;
-}
-
-.right {
-  right: 0px;
-  width: 50%;
-}
-
 #expPost {
   text-align: center;
   border: 2px solid green;
@@ -72,6 +57,20 @@ h1, h3 {
     border-radius: 15px;
     text-align: center;
   }
+  .container {
+    min-height: 100%;
+    display: flex;
+  }
+
+  .left {
+    left: 0px;
+    width: 50%;
+  }
+
+  .right {
+    right: 0px;
+    width: 50%;
+}
 }
 
 
