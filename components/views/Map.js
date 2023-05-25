@@ -19,9 +19,9 @@ export default (state) => html`
       id="radio3"
       class="list1"
       name="exp"
-      value="Bigfoot"
+      value="Big-foot"
     />
-    <label for="who2">Bigfoot</label>
+    <label for="who2">Big-foot</label>
     <input
       type="radio"
       id="radio4"
@@ -30,8 +30,9 @@ export default (state) => html`
       value="Ghost"
     />
     <label for="who3">Ghost</label>
-    <!-- Other button
-    <input
+    <!-- Other button -->
+    <!-- <input
+      onclick="showBox()"
       type="radio"
       id="radio5"
       class="list1"
