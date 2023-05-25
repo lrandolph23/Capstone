@@ -7,6 +7,7 @@ export default () => html`
 <img src="${motherShip}" class="mothership" alt="The Mothership">
 </div>
 <div class="right">
+<p> Our goal is to create a safe place for people to share their other-worldy experiences. Users can also check the corrilation between sightings and closest asteroids. Cosmonauts can use the stellar weather to check the conditions for travel.</p>
 <form action="https://formspree.io/f/moqzypyp" method="POST">
   <div>
     <label>

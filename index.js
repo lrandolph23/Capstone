@@ -6,6 +6,17 @@ import axios from "axios";
 
 const router = new Navigo("/");
 
+// Hidden Textbox UGH
+// function showBox() {
+//   let show = document.getElementById("radio5");
+//   let box = document.getElementById("radio6");
+//   if (show === true ) {
+//     box.style.display = "block";
+//   } else {
+//     box.style.display = "none";
+//   }
+// }
+
 function render(state = store.Home) {
   document.querySelector("#root").innerHTML = `
     ${Header(state)}
@@ -22,6 +33,11 @@ function afterRender(state) {
 document.querySelector(".fa-user-astronaut").addEventListener("click", () => {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
+
+// Hidden Textbox?
+// document.querySelector("#radio5").addEventListener("click", () => {
+//   document.querySelector("#radio6").style.toggle("block");
+// });
 
 if (state.view === "Map") {
   document.querySelector("form").addEventListener("submit", event => {
@@ -94,14 +110,21 @@ router.hooks({
       done();
     case "Weather":
       axios
-      .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-21&end_date=2023-05-21&api_key=${process.env.NASA_API_KEY}`)
-      // .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-21&end_date=2023-05-21&api_key=c63bvRwRiPQXnJ3f9rzz28PIq3AC48a3k1stngfa`)
+      .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-24&end_date=2023-05-25&api_key=${process.env.NASA_API_KEY}`)
      .then(response => {
+      const roundUp = doingIt =>
+      Math.round(doingIt);
+      const minSize = response.data.near_earth_objects["2023-05-24"][0].estimated_diameter.feet.estimated_diameter_min;
+      const maxSize = response.data.near_earth_objects["2023-05-24"][0].estimated_diameter.feet.estimated_diameter_max;
+      const average = roundUp((minSize+maxSize)/2);
+
         store.Weather.obj = {
-          name: response.data.near_earth_objects["2023-05-21"][0].name,
-          orbiting: response.data.near_earth_objects["2023-05-21"][0].close_approach_data[0].orbiting_body,
-          hazard:response.data.near_earth_objects["2023-05-21"][0].is_potentially_hazardous_asteroid,
-          miles: response.data.near_earth_objects["2023-05-21"][0].close_approach_data[0].miss_distance.miles
+          name: response.data.near_earth_objects["2023-05-24"][0].name,
+          orbiting: response.data.near_earth_objects["2023-05-24"][0].close_approach_data[0].orbiting_body,
+          hazard: response.data.near_earth_objects["2023-05-24"][0].is_potentially_hazardous_asteroid,
+          miles: roundUp(response.data.near_earth_objects["2023-05-24"][0].close_approach_data[0].miss_distance.miles),
+          size: average,
+
         };
           done();
         })
