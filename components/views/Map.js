@@ -1,5 +1,6 @@
 import html from "html-literal";
-export default (state) => html`
+export default (state) => {
+  return html`
 <h1>Share Your Experience</h1>
 <section id="exps" class="container">
 <form id="exps" class="left" method="POST" action="">
@@ -31,14 +32,13 @@ export default (state) => html`
     />
     <label for="who3">Ghost</label>
     <!-- Other button -->
-    <!-- <input
-      onclick="showBox()"
+    <input
       type="radio"
       id="radio5"
       class="list1"
       name="exp"
       />
-    <label for="who4">Other</label> -->
+    <label for="who4">Other</label>
    <!-- Hidden other textbox -->
    <input
       type="text"
@@ -88,4 +88,4 @@ export default (state) => html`
 </table>
 </div>
 </section>
-`;
+`};

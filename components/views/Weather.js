@@ -3,9 +3,12 @@ export default (state) => html`
 <h1>Closest Asteroid:</h1>
 <section id="obj" class="container">
 <div class="left">
-<p>
-<button type="submit">Search Date</button>
-</p>
+  <fieldset>
+<legend>Search by Date</legend>
+<label for="date">Date:
+  <input id="date" type="date" name="" value="">
+</label>
+</fieldset>
 </div>
 <div class="right">
 <div class="info">The closest object near ${state.obj.orbiting} is asteroid "${state.obj.name}" </div>
