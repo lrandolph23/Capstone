@@ -6,8 +6,6 @@ import axios from "axios";
 
 const router = new Navigo("/");
 
-// Hidden Textbox UGH
-
 function render(state = store.Home) {
   document.querySelector("#root").innerHTML = `
     ${Header(state)}
@@ -19,7 +17,7 @@ function render(state = store.Home) {
   router.updatePageLinks();
 }
 
-//Hiding NAV
+
 function afterRender(state) {
   document.querySelector(".fa-user-astronaut").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
@@ -66,8 +64,30 @@ function afterRender(state) {
     });
   }
 
-// Date Picker
-// document.getElementById("date").value = pickDate
+  // app.get("/weather/:city", (request, response) => {
+  //   axios
+  //     // Get request to retrieve the current weather data using the API key and providing a city name
+  //     .get(
+  //       `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=${request.params.city}`
+  //     )
+  //     .then(weatherData => {
+  //       console.log(weatherData);
+  //       response.json(weatherData.data);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // });
+
+//  //Date Search?
+  if (state.view === "Weather") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const input = event.target.elements.date.value;
+      console.log(input);
+        // document.getElementById()
+    })
+  }
 
 }
 
@@ -98,7 +118,8 @@ router.hooks({
             done();
           });
         break;
-      case "Map":
+
+        case "Map":
         axios
           .get(`${process.env.EXPERIENCE_API_URL}/exps`)
           .then(response => {
@@ -112,22 +133,38 @@ router.hooks({
           });
         break;
         done();
-      case "Weather":
-        axios
-          .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-24&end_date=2023-05-25&api_key=${process.env.NASA_API_KEY}`)
-          .then(response => {
-            const roundUp = doingIt =>
-              Math.round(doingIt);
-            const minSize = response.data.near_earth_objects["2023-05-24"][0].estimated_diameter.feet.estimated_diameter_min;
-            const maxSize = response.data.near_earth_objects["2023-05-24"][0].estimated_diameter.feet.estimated_diameter_max;
-            const average = roundUp((minSize + maxSize) / 2);
 
-            store.Weather.obj = {
-              name: response.data.near_earth_objects["2023-05-24"][0].name,
-              orbiting: response.data.near_earth_objects["2023-05-24"][0].close_approach_data[0].orbiting_body,
-              hazard: response.data.near_earth_objects["2023-05-24"][0].is_potentially_hazardous_asteroid,
-              miles: roundUp(response.data.near_earth_objects["2023-05-24"][0].close_approach_data[0].miss_distance.miles),
-              size: average,
+        case "Weather":
+        axios
+        // .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${input}&end_date=2026-05-25&api_key=${process.env.NASA_API_KEY}`)
+        .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-05-24&end_date=2023-05-25&api_key=${process.env.NASA_API_KEY}`)
+        .then(response => {
+          const roundUp = doingIt =>
+            Math.round(doingIt);
+          const minSize = response.data.near_earth_objects["2023-05-24"][0].estimated_diameter.feet.estimated_diameter_min;
+          const maxSize = response.data.near_earth_objects["2023-05-24"][0].estimated_diameter.feet.estimated_diameter_max;
+          const average = roundUp((minSize + maxSize) / 2);
+
+          store.Weather.obj = {
+            name: response.data.near_earth_objects["2023-05-24"][0].name,
+            orbiting: response.data.near_earth_objects["2023-05-24"][0].close_approach_data[0].orbiting_body,
+            hazard: response.data.near_earth_objects["2023-05-24"][0].is_potentially_hazardous_asteroid,
+            miles: roundUp(response.data.near_earth_objects["2023-05-24"][0].close_approach_data[0].miss_distance.miles),
+            size: average,
+          // Date Picker
+
+            // const roundUp = doingIt =>
+            //   Math.round(doingIt);
+            // const minSize = response.data.near_earth_objects[`${input}`][0].estimated_diameter.feet.estimated_diameter_min;
+            // const maxSize = response.data.near_earth_objects[`${input}`][0].estimated_diameter.feet.estimated_diameter_max;
+            // const average = roundUp((minSize + maxSize) / 2);
+
+            // store.Weather.obj = {
+            //   name: response.data.near_earth_objects[`${input}`][0].name,
+            //   orbiting: response.data.near_earth_objects[`${input}`][0].close_approach_data[0].orbiting_body,
+            //   hazard: response.data.near_earth_objects[`${input}`][0].is_potentially_hazardous_asteroid,
+            //   miles: roundUp(response.data.near_earth_objects[`${input}`][0].close_approach_data[0].miss_distance.miles),
+            //   size: average,
 
             };
             done();
