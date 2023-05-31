@@ -14,7 +14,7 @@ export default (state) => html`
 </fieldset>
 </div>
 <div class="right">
-<div class=info>For date:</div>
+<div class=info>For date: ${state.start}</div>
 <div class="info">The closest object near ${state.obj.orbiting} is asteroid "${state.obj.name}" </div>
 <div class="info">Distance from orbiting body: ${state.obj.miles} miles.</div>
 <div class="info">Size: ${state.obj.size} feet in diameter.</div>

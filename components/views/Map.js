@@ -2,14 +2,14 @@ import html from "html-literal";
 export default (state) => {
   return html`
 <h1>Share Your Experience</h1>
-<section id="exps" class="container">
+<section class="container">
 <form id="exps" class="left" method="POST" action="">
 <h3>Experience Submission Form</h3>
 <div class=left>
     <label for="who">Type:</label>
     <input
       type="radio"
-      id="radio2"
+      id="whoAlien"
       class="list1"
       name="exp"
       value="Alien"
@@ -17,7 +17,7 @@ export default (state) => {
     <label for="who1">Alien</label>
     <input
       type="radio"
-      id="radio3"
+      id="whoBigfoot"
       class="list1"
       name="exp"
       value="Big-foot"
@@ -25,7 +25,7 @@ export default (state) => {
     <label for="who2">Big-foot</label>
     <input
       type="radio"
-      id="radio4"
+      id="whoGhost"
       class="list1"
       name="exp"
       value="Ghost"
@@ -34,7 +34,7 @@ export default (state) => {
     <!-- Other button -->
     <input
       type="radio"
-      id="radio5"
+      id="whoOther"
       class="list1"
       name="exp"
       />
@@ -42,9 +42,9 @@ export default (state) => {
    <!-- Hidden other textbox -->
    <input
       type="text"
-      id="radio6"
+      id="whoOtherText"
       class="list1"
-      name="exp"
+      name="whoOtherText"
       placeholder="Other"
     />
 </div>
