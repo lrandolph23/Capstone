@@ -79,10 +79,22 @@ a:visited {
 
 /* SPACE WEATHER */
 .info {
+  font-size: large;
+  text-align: left;
   background-color: black;
-  color: white;
+  color: rgb(20, 215, 72);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 2%;
 }
-
+#yes {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+}
 /* ABOUT */
 .about {
   font-size: x-large;
