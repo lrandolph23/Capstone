@@ -1,7 +1,7 @@
 export default [
   { title: "Home", text: "Home" },
-  { title: "About", text: "About ME" },
-  { title: "Contact", text: "Contact us" },
-  { title: "Map", text: "Experience Map" },
-  { title: "Weather", text: "Stellar Weather" }
+  { title: "Map", text: "Experiences" },
+  { title: "Weather", text: "Stellar Weather" },
+  { title: "Contact", text: "Get in Contact" },
+  { title: "About", text: "About Site Creator" }
 ];

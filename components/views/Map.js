@@ -4,7 +4,7 @@ export default (state) => {
 <h1>Share Your Experience</h1>
 <section class="container">
 <form id="exps" class="left" method="POST" action="">
-<h3>Experience Submission Form</h3>
+<h3>Submission Form</h3>
 <div class=left>
     <label for="who">Type:</label>
     <input
@@ -73,7 +73,7 @@ export default (state) => {
 </div>
 
 <div class="right">
-  <h3>Experience Submissions</h3>
+  <h3>Submitted Experiences</h3>
 <table id="expPost">
 <tr>
   <td id="tbl">Who</td>

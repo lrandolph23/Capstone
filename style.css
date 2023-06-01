@@ -1,5 +1,5 @@
 html {
-  background-color: green;
+  background-color: rgb(20, 215, 72);
   font-family: 'Courier Prime', monospace;
   background-image: url(./assests/img/space-7710978_1280v4.jpg);
   background-size: cover;
@@ -11,7 +11,7 @@ html {
 header {
   background-color: black;
   text-align: center;
-  color: hotpink;
+  color: rgb(20, 215, 72);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -19,6 +19,14 @@ header {
 
 h1, h3 {
   text-align: center;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: rgb(20, 215, 72);
 }
 
 /* HOME */
@@ -33,23 +41,34 @@ h1, h3 {
     align-items: center;
   }
 
-  #jumbrotron > h1,h3 {
-    background-color: rgb(3, 143, 3);
+#jumbrotron > h1 {
+    background-color: rgb(20, 215, 72);
   }
+
 /* IMAGES */
 .mothership {
   max-width: 50%;
   max-height: auto;
+  border: 20px dotted rgb(20, 215, 72);
+}
+
+.me {
+  border: 20px solid rgb(20, 215, 72);
+  max-width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /* EXP MAP */
 #expPost {
   text-align: center;
-  border: 2px solid green;
+  border: 2px solid rgb(20, 215, 72);
 }
 
 #tbl {
-  background-color: greenyellow;
+  background-color: rgb(20, 215, 72);
   text-align: center;
 }
 
@@ -59,15 +78,66 @@ h1, h3 {
 }
 
 /* SPACE WEATHER */
-
 .info {
   background-color: black;
   color: white;
 }
 
+/* ABOUT */
+.about {
+  font-size: x-large;
+  border: 20px solid rgb(20, 215, 72);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* CONTACT */
+#contct {
+  background-color: rgb(20, 215, 72);
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 50%;
+}
+.insta {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  justify-content: auto;
+  font-size: large;
+}
+
 @media (max-width: 550px){
   .hidden--mobile {
     display: none !important;
+  }
+  nav > ul {
+    background-color: black;
+    /* display: inline; */
+  }
+  .about {
+    font-size: medium;
+  }
+  .mothership {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  #contct {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+  .insta {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
   }
 }
 
@@ -80,8 +150,10 @@ h1, h3 {
     justify-content: space-evenly;
   }
   nav > ul > li {
+    color: white;
+    background-color: black;
     display: inline-block;
-    border: 2px dotted rgb(3, 143, 3);
+    border: 2px dotted rgb(20, 215, 72);
     padding: .3rem;
     border-radius: 15px;
     text-align: center;
@@ -101,7 +173,7 @@ h1, h3 {
     right: 0px;
     width: 50%;
     text-align: center;
-}
+  }
 }
 
 
