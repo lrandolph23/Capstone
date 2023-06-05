@@ -46,7 +46,14 @@ a:visited {
   }
 
 .cool {
-  background-color: grey;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px;
+  border: 10px dotted rgb(20, 215, 72)
+}
+
+.history {
+  color:rgb(20, 215, 72);
 }
 
 /* IMAGES */
