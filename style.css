@@ -45,6 +45,10 @@ a:visited {
     background-color: rgb(20, 215, 72);
   }
 
+.cool {
+  background-color: grey;
+}
+
 /* IMAGES */
 .mothership {
   max-width: 50%;
@@ -70,6 +74,10 @@ a:visited {
 #tbl {
   background-color: rgb(20, 215, 72);
   text-align: center;
+}
+
+#what {
+  height: 50px;
 }
 
  /* Hidden other textbox */
