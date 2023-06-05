@@ -9,6 +9,9 @@ export default () => html`
 <div class="right">
 <img src=${alien} class="me" alt="me">
 <a href="https://www.linkedin.com/in/lacy-randolph-b3784726b/" class="insta">My Linkedin</a>
+<div>
+<a href="https://github.com/lrandolph23" class="insta">My GitHub</a>
+</div>
 </div>
 </section>
 `;
