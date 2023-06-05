@@ -72,6 +72,10 @@ a:visited {
   text-align: center;
 }
 
+#what {
+  height: 50px;
+}
+
  /* Hidden other textbox */
 #whoOtherText {
   display: none;

@@ -45,7 +45,7 @@ export default (state) => {
       id="whoOtherText"
       class="list1"
       name="whoOtherText"
-      placeholder="Other"
+      placeholder="Other..."
     />
 </div>
 <div class=left>
@@ -54,7 +54,7 @@ export default (state) => {
       type="text"
       name="where"
       id="where"
-      placeholder="Experience Location"
+      placeholder="Where it happened..."
       required
     />
 </div>
@@ -64,7 +64,7 @@ export default (state) => {
       type="text"
       name="what"
       id="what"
-      placeholder="What Happened"
+      placeholder="What happened..."
       required
     />
 </div>
