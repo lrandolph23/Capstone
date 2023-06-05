@@ -3,7 +3,7 @@ export default (state) => html`
 <section id="jumbrotron">
 <h1>Safe place to anonymously share other-wordly experiences!</h1>
 <section class="cool">
-<h2>Some experiences in history to check out:</h2>
+<h2 class="history">Some experiences in history to check out:</h2>
 <div>
 <a href="https://www.southeastarrow.com/story/2455754.html">Alien: Cape Girardeau Alien Crash 1941</a>
 </div>

@@ -72,22 +72,7 @@ function afterRender(state) {
     });
   }
 
-  // app.get("/weather/:city", (request, response) => {
-  //   axios
-  //     // Get request to retrieve the current weather data using the API key and providing a city name
-  //     .get(
-  //       `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=${request.params.city}`
-  //     )
-  //     .then(weatherData => {
-  //       console.log(weatherData);
-  //       response.json(weatherData.data);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // });
-
-//  //Date Search?
+//Date Search
   if (state.view === "Weather") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
