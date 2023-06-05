@@ -95,7 +95,6 @@ function afterRender(state) {
       store.Weather.start = input;
       console.log(input);
       router.navigate("/weather")
-        // document.getElementById()
     })
   }
 
@@ -146,7 +145,6 @@ router.hooks({
 
         case "Weather":
         axios
-        // .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${input}&end_date=2026-05-25&api_key=${process.env.NASA_API_KEY}`)
         .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${store.Weather.start}&end_date=${store.Weather.start}&api_key=${process.env.NASA_API_KEY}`)
         .then(response => {
           const roundUp = doingIt =>
