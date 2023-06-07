@@ -1,7 +1,7 @@
 import html from "html-literal";
 export default (state) => html`
 <section id="jumbrotron">
-<h1>Safe place to anonymously share other-wordly experiences!</h1>
+<h1 class="intro">Safe place to anonymously share other-wordly experiences!</h1>
 <section class="cool">
 <h2 class="history">Some experiences in history to check out:</h2>
 <div>
